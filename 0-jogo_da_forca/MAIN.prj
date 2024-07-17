@@ -1,0 +1,4 @@
+vhdl work "list_ch08_01_ps2_rx.vhd"
+vhdl work "lcd.vhd"
+vhdl work "contador.vhd"
+vhdl work "MAIN.vhd"

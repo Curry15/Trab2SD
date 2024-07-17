@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/sd/Desktop/jogo_da_forca/impact.xsl
+OUTFILE=/home/sd/Desktop/jogo_da_forca/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/sd/Desktop/jogo_da_forca
+LICENSE=iMPACT
+USER_INFO=iMPACT

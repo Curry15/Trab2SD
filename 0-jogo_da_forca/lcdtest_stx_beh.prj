@@ -1,0 +1,2 @@
+vhdl isim_temp "lcd.vhd"
+vhdl isim_temp "lcdtest.vhd"

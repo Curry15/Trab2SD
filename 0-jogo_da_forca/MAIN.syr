@@ -1,0 +1,681 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: MAIN.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MAIN.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MAIN"
+Output Format                      : NGC
+Target Device                      : xc3s700an-5-fgg484
+
+---- Source Options
+Top Module Name                    : MAIN
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/sd/Desktop/jogo_da_forca/list_ch08_01_ps2_rx.vhd" in Library work.
+Entity <ps2_rx> compiled.
+WARNING:HDLParsers:1406 - "/home/sd/Desktop/jogo_da_forca/list_ch08_01_ps2_rx.vhd" Line 92. No sensitivity list and no wait in the process
+Entity <ps2_rx> (Architecture <arch>) compiled.
+Compiling vhdl file "/home/sd/Desktop/jogo_da_forca/contador.vhd" in Library work.
+Architecture behavioral of Entity contador is up to date.
+Compiling vhdl file "/home/sd/Desktop/jogo_da_forca/lcd.vhd" in Library work.
+Architecture arch of Entity lcd is up to date.
+Compiling vhdl file "/home/sd/Desktop/jogo_da_forca/MAIN.vhd" in Library work.
+Architecture behavioral of Entity main is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <MAIN> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ps2_rx> in library <work> (architecture <arch>).
+
+Analyzing hierarchy for entity <contador> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <lcd> in library <work> (architecture <arch>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <MAIN> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "/home/sd/Desktop/jogo_da_forca/MAIN.vhd" line 66: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <submit>
+Entity <MAIN> analyzed. Unit <MAIN> generated.
+
+Analyzing Entity <ps2_rx> in library <work> (Architecture <arch>).
+WARNING:Xst:819 - "/home/sd/Desktop/jogo_da_forca/list_ch08_01_ps2_rx.vhd" line 92: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <state_next>, <b_reg>
+Entity <ps2_rx> analyzed. Unit <ps2_rx> generated.
+
+Analyzing Entity <contador> in library <work> (Architecture <behavioral>).
+Entity <contador> analyzed. Unit <contador> generated.
+
+Analyzing Entity <lcd> in library <work> (Architecture <arch>).
+WARNING:Xst:819 - "/home/sd/Desktop/jogo_da_forca/lcd.vhd" line 169: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <writeDone>
+WARNING:Xst:819 - "/home/sd/Desktop/jogo_da_forca/lcd.vhd" line 239: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <submit>
+Entity <lcd> analyzed. Unit <lcd> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ps2_rx>.
+    Related source file is "/home/sd/Desktop/jogo_da_forca/list_ch08_01_ps2_rx.vhd".
+WARNING:Xst:646 - Signal <b_reg<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 8-bit latch for signal <dout>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 11-bit register for signal <b_reg>.
+    Found 1-bit register for signal <f_ps2c_reg>.
+    Found 8-bit register for signal <filter_reg>.
+    Found 4-bit register for signal <n_reg>.
+    Found 4-bit subtractor for signal <n_reg$addsub0000> created at line 82.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ps2_rx> synthesized.
+
+
+Synthesizing Unit <contador>.
+    Related source file is "/home/sd/Desktop/jogo_da_forca/contador.vhd".
+    Found 31-bit down counter for signal <count>.
+    Found 31-bit comparator lessequal for signal <count$cmp_le0000> created at line 47.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 Comparator(s).
+Unit <contador> synthesized.
+
+
+Synthesizing Unit <lcd>.
+    Related source file is "/home/sd/Desktop/jogo_da_forca/lcd.vhd".
+    Found 21x10-bit ROM for signal <RS$rom0000> created at line 251.
+    Found finite state machine <FSM_1> for signal <stCurW>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | OneUSClk                  (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | stidle                                         |
+    | Power Up State     | stidle                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Using one-hot encoding for signal <stCur>.
+    Using one-hot encoding for signal <stNext>.
+    Found 6-bit up counter for signal <clkCount>.
+    Found 17-bit up counter for signal <count>.
+    Found 4-bit up counter for signal <lcd_cmd_ptr>.
+    Found 5-bit register for signal <lcd_cmd_ptr_vrf>.
+    Found 4-bit comparator greatequal for signal <lcd_cmd_ptr_vrf$cmp_ge0000> created at line 174.
+    Found 4-bit comparator lessequal for signal <lcd_cmd_ptr_vrf$cmp_le0000> created at line 175.
+    Found 11-bit register for signal <stCur>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred   3 Counter(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <lcd> synthesized.
+
+
+Synthesizing Unit <MAIN>.
+    Related source file is "/home/sd/Desktop/jogo_da_forca/MAIN.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <error>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mask_7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+Unit <MAIN> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 21x10-bit ROM                                         : 1
+# Adders/Subtractors                                   : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 4
+ 17-bit up counter                                     : 1
+ 31-bit down counter                                   : 1
+ 4-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 6
+ 1-bit register                                        : 1
+ 11-bit register                                       : 2
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+ 8-bit register                                        : 1
+# Latches                                              : 10
+ 1-bit latch                                           : 9
+ 8-bit latch                                           : 1
+# Comparators                                          : 3
+ 31-bit comparator lessequal                           : 1
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <lcd_unit/stCurW/FSM> on signal <stCurW[1:2]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ strw     | 00
+ stenable | 01
+ stidle   | 10
+----------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <ps2_rx_unit/state_reg/FSM> on signal <state_reg[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 00
+ dps   | 01
+ load  | 11
+-------------------
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_0.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_1.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_2.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_3.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_4.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_5.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_6.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch 0 hinder the constant cleaning in the block mask_7.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx_unit>.
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# ROMs                                                 : 1
+ 21x10-bit ROM                                         : 1
+# Adders/Subtractors                                   : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 4
+ 17-bit up counter                                     : 1
+ 31-bit down counter                                   : 1
+ 4-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 39
+ Flip-Flops                                            : 39
+# Latches                                              : 10
+ 1-bit latch                                           : 9
+ 8-bit latch                                           : 1
+# Comparators                                          : 3
+ 31-bit comparator lessequal                           : 1
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <stCur_10> has a constant value of 0 in block <lcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_7 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_6 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_5 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_4 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_3 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_2 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_1 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch mask_0 hinder the constant cleaning in the block MAIN.
+   You should achieve better results by setting this init to 1.
+
+Optimizing unit <MAIN> ...
+
+Optimizing unit <lcd> ...
+
+Optimizing unit <ps2_rx> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MAIN, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 100
+ Flip-Flops                                            : 100
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : MAIN.ngr
+Top Level Output File Name         : MAIN
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 16
+
+Cell Usage :
+# BELS                             : 331
+#      GND                         : 1
+#      INV                         : 33
+#      LUT1                        : 18
+#      LUT2                        : 22
+#      LUT2_L                      : 1
+#      LUT3                        : 18
+#      LUT3_D                      : 1
+#      LUT3_L                      : 5
+#      LUT4                        : 102
+#      LUT4_D                      : 5
+#      LUT4_L                      : 8
+#      MUXCY                       : 55
+#      MUXF5                       : 13
+#      VCC                         : 1
+#      XORCY                       : 48
+# FlipFlops/Latches                : 117
+#      FD                          : 5
+#      FDC                         : 25
+#      FDCE                        : 9
+#      FDR                         : 53
+#      FDRSE                       : 4
+#      FDS                         : 3
+#      FDSE                        : 1
+#      LD                          : 9
+#      LDE                         : 8
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 15
+#      IBUF                        : 4
+#      OBUF                        : 11
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s700anfgg484-5 
+
+ Number of Slices:                      122  out of   5888     2%  
+ Number of Slice Flip Flops:            117  out of  11776     0%  
+ Number of 4 input LUTs:                213  out of  11776     1%  
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    372     4%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------------+----------------------------+-------+
+Clock Signal                                                       | Clock buffer(FF name)      | Load  |
+-------------------------------------------------------------------+----------------------------+-------+
+mask_7_cmp_eq0000(mask_7_cmp_eq000011:O)                           | NONE(*)(mask_7)            | 1     |
+mask_6_cmp_eq0000(mask_6_cmp_eq000011:O)                           | NONE(*)(mask_6)            | 1     |
+mask_5_cmp_eq0000(mask_5_cmp_eq00001:O)                            | NONE(*)(mask_5)            | 1     |
+mask_4_cmp_eq0000(mask_4_cmp_eq000021:O)                           | NONE(*)(mask_4)            | 1     |
+mask_3_cmp_eq0000(mask_3_cmp_eq00001:O)                            | NONE(*)(mask_3)            | 1     |
+mask_2_cmp_eq0000(mask_2_cmp_eq00002_f5:O)                         | NONE(*)(mask_2)            | 1     |
+mask_1_cmp_eq0000(mask_1_cmp_eq000021:O)                           | NONE(*)(mask_1)            | 1     |
+ps2_rx_unit/state_reg_FSM_FFd1                                     | NONE(error)                | 1     |
+mask_0_cmp_eq0000(mask_0_cmp_eq000021:O)                           | NONE(*)(mask_0)            | 1     |
+error1                                                             | BUFG                       | 31    |
+lcd_unit/clkCount_51                                               | BUFG                       | 38    |
+clk                                                                | BUFGP                      | 31    |
+ps2_rx_unit/state_reg_cmp_eq0004(ps2_rx_unit/state_reg_FSM_Out31:O)| NONE(*)(ps2_rx_unit/dout_7)| 8     |
+-------------------------------------------------------------------+----------------------------+-------+
+(*) These 9 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------------------+-----------------------------+-------+
+Control Signal                                      | Buffer(FF name)             | Load  |
+----------------------------------------------------+-----------------------------+-------+
+reset                                               | IBUF                        | 25    |
+lcd_unit/writeDone(lcd_unit/writeDone_cmp_eq00001:O)| NONE(lcd_unit/lcd_cmd_ptr_0)| 9     |
+----------------------------------------------------+-----------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 6.656ns (Maximum Frequency: 150.243MHz)
+   Minimum input arrival time before clock: 2.076ns
+   Maximum output required time after clock: 7.039ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'error1'
+  Clock period: 5.284ns (frequency: 189.248MHz)
+  Total number of paths / destination ports: 1426 / 62
+-------------------------------------------------------------------------
+Delay:               5.284ns (Levels of Logic = 11)
+  Source:            contar/count_1 (FF)
+  Destination:       contar/count_0 (FF)
+  Source Clock:      error1 rising
+  Destination Clock: error1 rising
+
+  Data Path: contar/count_1 to contar/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              8   0.495   0.643  contar/count_1 (contar/count_1)
+     INV:I->O              1   0.562   0.000  contar/Mcompar_count_cmp_le0000_lut<0>_INV_0 (contar/Mcompar_count_cmp_le0000_lut<0>)
+     MUXCY:S->O            1   0.523   0.000  contar/Mcompar_count_cmp_le0000_cy<0> (contar/Mcompar_count_cmp_le0000_cy<0>)
+     MUXCY:CI->O           1   0.065   0.000  contar/Mcompar_count_cmp_le0000_cy<1> (contar/Mcompar_count_cmp_le0000_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  contar/Mcompar_count_cmp_le0000_cy<2> (contar/Mcompar_count_cmp_le0000_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  contar/Mcompar_count_cmp_le0000_cy<3> (contar/Mcompar_count_cmp_le0000_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  contar/Mcompar_count_cmp_le0000_cy<4> (contar/Mcompar_count_cmp_le0000_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  contar/Mcompar_count_cmp_le0000_cy<5> (contar/Mcompar_count_cmp_le0000_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  contar/Mcompar_count_cmp_le0000_cy<6> (contar/Mcompar_count_cmp_le0000_cy<6>)
+     MUXCY:CI->O           1   0.065   0.000  contar/Mcompar_count_cmp_le0000_cy<7> (contar/Mcompar_count_cmp_le0000_cy<7>)
+     MUXCY:CI->O           1   0.179   0.357  contar/Mcompar_count_cmp_le0000_cy<8> (contar/count_cmp_le0000)
+     INV:I->O             31   0.562   1.073  contar/count_not00011_INV_0 (contar/count_not0001)
+     FDS:S                     0.435          contar/count_0
+    ----------------------------------------
+    Total                      5.284ns (3.211ns logic, 2.073ns route)
+                                       (60.8% logic, 39.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'lcd_unit/clkCount_51'
+  Clock period: 6.656ns (frequency: 150.243MHz)
+  Total number of paths / destination ports: 2707 / 68
+-------------------------------------------------------------------------
+Delay:               6.656ns (Levels of Logic = 5)
+  Source:            lcd_unit/count_1 (FF)
+  Destination:       lcd_unit/lcd_cmd_ptr_3 (FF)
+  Source Clock:      lcd_unit/clkCount_51 rising
+  Destination Clock: lcd_unit/clkCount_51 rising
+
+  Data Path: lcd_unit/count_1 to lcd_unit/lcd_cmd_ptr_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.495   0.607  lcd_unit/count_1 (lcd_unit/count_1)
+     LUT4:I0->O            1   0.561   0.359  lcd_unit/delayOK_or000047 (lcd_unit/delayOK_or000047)
+     LUT4_L:I3->LO         1   0.561   0.102  lcd_unit/delayOK_or000050 (lcd_unit/delayOK_or000050)
+     LUT4:I3->O            1   0.561   0.359  lcd_unit/delayOK_or000077 (lcd_unit/delayOK_or000077)
+     LUT4:I3->O           36   0.561   1.076  lcd_unit/delayOK_or0000194 (lcd_unit/delayOK)
+     LUT4:I3->O            9   0.561   0.697  lcd_unit/lcd_cmd_ptr_not00011 (lcd_unit/lcd_cmd_ptr_not0001)
+     FDCE:CE                   0.156          lcd_unit/lcd_cmd_ptr_0
+    ----------------------------------------
+    Total                      6.656ns (3.456ns logic, 3.200ns route)
+                                       (51.9% logic, 48.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.569ns (frequency: 179.549MHz)
+  Total number of paths / destination ports: 397 / 30
+-------------------------------------------------------------------------
+Delay:               5.569ns (Levels of Logic = 5)
+  Source:            ps2_rx_unit/filter_reg_5 (FF)
+  Destination:       ps2_rx_unit/n_reg_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: ps2_rx_unit/filter_reg_5 to ps2_rx_unit/n_reg_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.495   0.607  ps2_rx_unit/filter_reg_5 (ps2_rx_unit/filter_reg_5)
+     LUT4:I0->O            1   0.561   0.359  ps2_rx_unit/fall_edge31 (ps2_rx_unit/fall_edge31)
+     LUT4_D:I3->LO         1   0.561   0.166  ps2_rx_unit/fall_edge35 (N120)
+     LUT2:I1->O           13   0.562   0.838  ps2_rx_unit/n_reg_mux0000<3>21 (ps2_rx_unit/N4)
+     LUT4_L:I3->LO         1   0.561   0.102  ps2_rx_unit/n_reg_mux0000<2>_SW0 (N27)
+     LUT4:I3->O            1   0.561   0.000  ps2_rx_unit/n_reg_mux0000<2> (ps2_rx_unit/n_reg_mux0000<2>)
+     FDC:D                     0.197          ps2_rx_unit/n_reg_1
+    ----------------------------------------
+    Total                      5.569ns (3.498ns logic, 2.072ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'lcd_unit/clkCount_51'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              2.076ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       lcd_unit/stCurW_FSM_FFd2 (FF)
+  Destination Clock: lcd_unit/clkCount_51 rising
+
+  Data Path: rst to lcd_unit/stCurW_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.824   0.817  rst_IBUF (rst_IBUF)
+     FDS:S                     0.435          lcd_unit/stCurW_FSM_FFd1
+    ----------------------------------------
+    Total                      2.076ns (1.259ns logic, 0.817ns route)
+                                       (60.6% logic, 39.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              1.962ns (Levels of Logic = 2)
+  Source:            ps2d (PAD)
+  Destination:       ps2_rx_unit/b_reg_10 (FF)
+  Destination Clock: clk rising
+
+  Data Path: ps2d to ps2_rx_unit/b_reg_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.824   0.380  ps2d_IBUF (ps2d_IBUF)
+     LUT4:I2->O            1   0.561   0.000  ps2_rx_unit/b_reg_mux0000<10>1 (ps2_rx_unit/b_reg_mux0000<10>)
+     FDC:D                     0.197          ps2_rx_unit/b_reg_10
+    ----------------------------------------
+    Total                      1.962ns (1.582ns logic, 0.380ns route)
+                                       (80.6% logic, 19.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'lcd_unit/clkCount_51'
+  Total number of paths / destination ports: 67 / 9
+-------------------------------------------------------------------------
+Offset:              7.039ns (Levels of Logic = 3)
+  Source:            lcd_unit/lcd_cmd_ptr_vrf_3 (FF)
+  Destination:       RS (PAD)
+  Source Clock:      lcd_unit/clkCount_51 rising
+
+  Data Path: lcd_unit/lcd_cmd_ptr_vrf_3 to RS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            17   0.495   1.001  lcd_unit/lcd_cmd_ptr_vrf_3 (lcd_unit/lcd_cmd_ptr_vrf_3)
+     LUT4:I0->O            1   0.561   0.000  lcd_unit/Mrom_RS_rom00002_F (N114)
+     MUXF5:I0->O           1   0.229   0.357  lcd_unit/Mrom_RS_rom00002 (LCD_DB_2_OBUF)
+     OBUF:I->O                 4.396          LCD_DB_2_OBUF (LCD_DB<2>)
+    ----------------------------------------
+    Total                      7.039ns (5.681ns logic, 1.358ns route)
+                                       (80.7% logic, 19.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.63 secs
+ 
+--> 
+
+
+Total memory usage is 618888 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   35 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

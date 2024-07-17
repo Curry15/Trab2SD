@@ -1,0 +1,102 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity MAIN is
+	port(
+		--entradas correspondentes ao ps2
+		clk, , rst: in  std_logic;
+     		ps2d, ps2c: in  std_logic;
+
+		--entradas do display LCD
+		reset: in 	std_logic
+		LCD_DB: 	out std_logic_vector(7 downto 0);
+		RS:out 		std_logic;
+		RW:out 		std_logic;
+		OE:out 		std_logic
+		);
+end MAIN;
+
+architecture behavioral of MAIN is
+
+
+	component contador port(	
+		erro:		IN STD_LOGIC;
+		saida_contador: OUT STD_LOGIC_VECTOR(2 DOWNTO 0)	
+		);
+	end component;
+
+	signal key_code:  std_logic_vector(7 downto 0);			--código da letra no teclado ps2
+	signal mask: 	  std_logic_vector(7 downto 0):= "00000000";	--máscara da palavra
+	signal error:     std_logic:='0';				--sinaliza quando houve um erro
+	signal submit:    std_logic:='0';				--sinaliza quando uma palavra terminou de ser enviada
+	signal hearts:    std_logic_vector(2 downto 0):= "101";		--simboliza as vidas restantes
+	
+begin
+		
+	ps2_rx_unit: entity work.ps2_rx(arch)
+      port map(
+		clk=>clk, 			--clock da placa
+		reset=>reset, 			--reseta os bits que entraram
+		rx_en=>'1',			--habilita o teclado a enviar informação
+                ps2d=>ps2d, 			--bit enviado do teclado para formar o caractere(8bits)
+		ps2c=>ps2c,			--Clock do teclado
+                rx_done_tick=>submit,		--sinaliza quando uma palavra terminou de ser enviada
+                dout=>key_code			--código da letra no teclado ps2
+	);
+	
+	contar: contador port map(
+		erro => error,			--sinaliza quando houve um erro
+		saida_contador => hearts	--Conta quantas vidas sobraram com o erro
+		);
+	------------------------------------------------		
+	--codigo forca
+	process(key_code, error)
+	begin
+		if (submit = '1') then --Somente avalia se sequência de bits inteira da letra chegou
+
+			if (key_code = "00101011") then --Rrepresentação do F em ps2
+				mask(0)<='1';
+				error <= '0';
+			elsif (key_code = "01001011") then --Rrepresentação do L em ps2
+				mask(1)<='1';
+				error <= '0';
+			elsif (key_code = "00011100") then --Rrepresentação do A em ps2
+				mask(2)<='1';
+				error <= '0';
+			elsif (key_code = "00111010") then --Rrepresentação do M em ps2
+				mask(3)<='1';
+				error <= '0';
+			elsif (key_code = "00100100") then --Rrepresentação do E em ps2
+				mask(4)<='1';
+				error <= '0';
+			elsif (key_code = "00110001") then --Rrepresentação do N em ps2
+				mask(5)<='1';
+				error <= '0';
+			elsif (key_code = "00110100") then --Rrepresentação do G em ps2
+				mask(6)<='1';
+				error <= '0';
+			elsif (key_code = "01000100") then --Rrepresentação do O em ps2
+				mask(7)<='1';
+				error <= '0';
+			else 				   --perde uma vida
+				error <= '1';
+			end if;
+		end if;
+	end process;
+	
+	------------------------------------------------		
+	lcd_unit: entity work.lcd(arch)
+		port map (
+			LCD_DB => LCD_DB,			--DB( 7 through 0)
+			RS => RS, 				--WE
+			RW => RW,				--ADR(0)
+			CLK => clk,				--GCLK2
+			OE => OE,				--OE
+			rst => rst,				--BTN
+			mask => mask,				--Máscara da palavra
+			hearts => hearts,			--Vidas
+			submit => submit			--'1' quando uma letra tenha sido enviada completa
+			);
+end behavioral;

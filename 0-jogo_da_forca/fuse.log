@@ -1,0 +1,24 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/sd/Desktop/jogo_da_forca/testps2_isim_beh.exe -prj /home/sd/Desktop/jogo_da_forca/testps2_beh.prj work.testps2 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/sd/Desktop/jogo_da_forca/list_ch08_01_ps2_rx.vhd" into library work
+WARNING:HDLCompiler:1369 - "/home/sd/Desktop/jogo_da_forca/list_ch08_01_ps2_rx.vhd" Line 92: Possible infinite loop; process does not have a wait statement
+Parsing VHDL file "/home/sd/Desktop/jogo_da_forca/testps2.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 95772 KB
+Fuse CPU Usage: 970 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture arch of entity ps2_rx [ps2_rx_default]
+Compiling architecture behavior of entity testps2
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 6 VHDL Units
+Built simulation executable /home/sd/Desktop/jogo_da_forca/testps2_isim_beh.exe
+Fuse Memory Usage: 665504 KB
+Fuse CPU Usage: 1070 ms
+GCC CPU Usage: 200 ms

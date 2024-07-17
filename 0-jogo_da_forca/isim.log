@@ -1,0 +1,14 @@
+ISim log file
+Running: /home/sd/Desktop/jogo_da_forca/testps2_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/sd/Desktop/jogo_da_forca/testps2_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Stopped at time : 0 fs : File "/home/sd/Desktop/jogo_da_forca/list_ch08_01_ps2_rx.vhd" Line 94
+# exit 0
